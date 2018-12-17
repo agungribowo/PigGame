@@ -11,7 +11,7 @@ GAME RULES:
 var scores, roundScore, activePlayer, dice;
 scores = [0,0];
 roundScore = 0;
-activePlayer = 1;
+activePlayer = 0;
 
 dice = Math.floor(Math.random() * 6) + 1;
 
@@ -45,11 +45,25 @@ document.querySelector('.btn-roll').addEventListener('click', function() {
         document.getElementById('current-0').textContent = '0';
         document.getElementById('current-1').textContent = '0';
 
-        document.querySelector('.player-0-panel').classList.remove('active');
-        document.querySelector('.player-1-panel').classList.add('active');
+        document.querySelector('.player-0-panel').classList.toggle('active');
+        document.querySelector('.player-1-panel').classList.toggle('active');
+        //document.querySelector('.player-0-panel').classList.remove('active');
+        //document.querySelector('.player-1-panel').classList.add('active');
+
+        document.querySelector('.dice').style.display = 'none';
     }
 
 });
+
+    document.querySelector('.btn-hold').addEventListener('click', function(){
+        //add Current score to global score 
+        
+
+        //update the UI 
+
+        //check if player won the game
+
+    });
 
 
 //document.querySelector('#current-' + activePlayer).textContent = dice;
